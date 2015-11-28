@@ -1,12 +1,9 @@
 var mongoose = require('mongoose');
 
-var UserSchema = new mongoose.Schema({
-    email: String,
-    password: String,
-    picture: String,
-    displayName: String,
-    activities: Array
+var SongSchema = new mongoose.Schema({
+    name: String,
+    bpm: Number
 });
 
 
-module.exports = mongoose.model('User', UserSchema);
+module.exports = mongoose.model('Song', SongSchema);
