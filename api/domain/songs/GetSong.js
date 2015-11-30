@@ -1,6 +1,7 @@
 "use strict";
 var Command = require("../../core/command.js");
 var ApplicationError = require('../../core/error.js');
+var Song = require('../../models/Song.js');
 
 
 class GetSong extends Command {
@@ -10,27 +11,26 @@ class GetSong extends Command {
 
     execute(options) {
         return new Promise((resolve, reject)=> {
-            var songs = [
-                {
-                    name: 'song1',
-                    bpm: 111
-                },
-                {
-                    name: 'song2',
-                    bpm: 222
-                },
-                {
-                    name: 'song3',
-                    bpm: 333
-                },
-                {
-                    name: 'song4',
-                    bpm: 444
-                }
-            ]
-
-            resolve(songs)
-
+            if (options.name || options.bpm) {
+                Song.find({$or: [{name: options.name}, {bpm: options.bpm}]})
+                    .exec(function (err, song) {
+                        if (err) {
+                            reject(new ApplicationError({name: 'GetSong Error', message: 'Could not retrieve song', inner: err}))
+                        }
+                        if (song.length > 0) {
+                            resolve(song)
+                        } else {
+                            resolve('No songs match your query')
+                        }
+                    })
+            } else {
+                Song.find({}, function (err, allSongs) {
+                    if (err) {
+                        reject(new ApplicationError({name: 'GetSong Error', message: 'Could not retrieve song', inner: err}))
+                    }
+                    resolve(allSongs)
+                })
+            }
         })
 
     }

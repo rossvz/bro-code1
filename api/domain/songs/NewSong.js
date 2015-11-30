@@ -10,7 +10,21 @@ class NewSong extends Command {
     }
 
     execute(options) {
-        var randomName = 'Test'
+        return new Promise((resolve, reject)=> {
+            var name = options.name;
+            var bpm = options.bpm;
+            var newSong = new Song({
+                name: name,
+                bpm: bpm
+            });
+            newSong.save(function (err) {
+                if (err) {
+                    reject(new ApplicationError({name: 'NewSong Error', message: 'Could not save to mongo', inner: err}))
+                }
+                resolve('New Song written to mongo')
+            })
+        })
+
 
     }
 }

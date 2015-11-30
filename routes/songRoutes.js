@@ -4,10 +4,23 @@ var CommandListClass = require('../api/domain/CommandList.js');
 var CommandList = new CommandListClass;
 
 
-router.get('/songs/:songId(\\d+)?', function (req, res) {
+router.get('/songs', function (req, res) {
     var cmd = CommandList['GetSong']();
-    var options = {};
-    options.id = req.params.song;
+    var options = {
+        name: req.query.name,
+        bpm: req.query.bpm
+    };
+    cmd.execute(options).then(function (response) {
+        res.json(response);
+    }).catch(function (err) {
+        res.header(400);
+        res.json(err)
+    })
+});
+
+router.post('/songs', function (req, res) {
+    var cmd = CommandList['NewSong']();
+    var options = req.body.payload;
     cmd.execute(options).then(function (response) {
         res.json(response);
     }).catch(function (err) {

@@ -1,12 +1,15 @@
 var mongoose = require('mongoose');
 
-var UserSchema = new mongoose.Schema({
-    email: String,
-    password: String,
-    picture: String,
-    displayName: String,
-    activities: Array
-});
+var SongSchema = new mongoose.Schema({
+    songId: Number,
+    name: String,
+    artist: String,
+    album: String,
+    bpm: Number,
+    key: String,
+    structure: Array
+
+}, {collection: 'songs'});
 
 
-module.exports = mongoose.model('User', UserSchema);
+module.exports = mongoose.model('Song', SongSchema);
