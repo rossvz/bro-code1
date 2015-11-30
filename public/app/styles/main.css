@@ -96,13 +96,14 @@ a:hover {
   transition: all 0.2s;
 }
 .cd-header .callout .btn.join {
-  background-color: #b9ffb7;
-  color: #212121;
-  border: 2px solid #b9ffb7;
+  background-color: #048ba8;
+  border: 2px solid #048ba8;
+  color: #ffffff;
 }
 .cd-header .callout .btn.join:hover {
   background-color: #ffffff;
   border: 2px solid #ffffff;
+  color: #048ba8;
 }
 .cd-header .callout .btn.login {
   background-color: transparent;
@@ -614,7 +615,7 @@ main.nav-is-visible {
 }
 @media only screen and (min-width: 480px) {
   .cd-side-navigation {
-    width: 94px;
+    width: 8vw;
   }
   .cd-side-navigation a {
     padding: 3em 9;
