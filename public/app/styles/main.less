@@ -25,7 +25,7 @@ html {font-size: 62.5%;}
     font-size: 100%;
     font: inherit;
     vertical-align: baseline;
-    text-decoration: none;
+    text-decoration: none !important;
     list-style: none;
 }
 *, *::after, *::before {
@@ -81,6 +81,8 @@ a,a:hover {
         font-weight: 800;
         text-transform: uppercase;
         letter-spacing: 2px;
+
+        b {font-weight: 300;}
     }
     p {
         color: @white;
