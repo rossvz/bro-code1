@@ -29,6 +29,26 @@ angular
         controller: 'AboutCtrl',
         controllerAs: 'about'
       })
+      .when('/library', {
+        templateUrl: 'views/library.html',
+        controller: 'LibraryCtrl',
+        controllerAs: 'library'
+      })
+      .when('/song', {
+        templateUrl: 'views/song.html',
+        controller: 'SongCtrl',
+        controllerAs: 'song'
+      })
+      .when('/login', {
+        templateUrl: 'views/login.html',
+        controller: 'LoginCtrl',
+        controllerAs: 'login'
+      })
+      .when('/setlist', {
+        templateUrl: 'views/setlist.html',
+        controller: 'SetlistCtrl',
+        controllerAs: 'setlist'
+      })
       .otherwise({
         redirectTo: '/'
       });
