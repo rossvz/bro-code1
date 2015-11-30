@@ -5,49 +5,56 @@
     <title>Bro Code</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,300italic,700,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Gentium+Basic:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="styles/main.css">
   </head>
   <body ng-app="brocodiusApp">
 
     <header class="cd-header">
-      <a href="#0" class="cd-logo"><img src="img/cd-logo.svg" alt="Logo"></a>
-      <a href="#0" class="cd-3d-nav-trigger">
-        Menu
-        <span></span>
-      </a>
+
+      <div class="callout">
+        <div class="valign">
+          <h1>Welcome to BroCode</h1>
+          <p>Live performance, real structure.</p>
+
+          <a href="#">
+            <div class="btn join">Join</div>
+          </a>
+          <a href="#">
+            <div class="btn login">Login</div>
+          </a>
+        </div>
+      </div>
     </header> <!-- .cd-header -->
+
     
-    <main>
-      <h1>3D Rotating Navigation</h1>
-      <!-- all your content here -->
-    </main>
-    
-    <nav class="cd-3d-nav-container">
-      <ul class="cd-3d-nav">
-        <li class="cd-selected">
-          <a href="#0">Dashboard</a>
-        </li>
+    <nav class="cd-side-navigation">
+    <ul>
+      <li>
+        <a href="#0" data-menu="index">
+          <img src="img/library.svg">
+          <p>Library</p>
+        </a>
+      </li>
 
-        <li>
-          <a href="#0">Projects</a>
-        </li>
+      <li>
+        <a href="#0" data-menu="services">
+          <img src="img/setlist.svg">
+          <p>Setlists</p>
+        </a>
+      </li>
 
-        <li>
-          <a href="#0">Images</a>
-        </li>
-
-        <li>
-          <a href="#0">Settings</a>
-        </li>
-
-        <li>
-          <a href="#0">New</a>
-        </li>
-      </ul> <!-- .cd-3d-nav -->
-
-      <span class="cd-marker color-1"></span> 
-    </nav> <!-- .cd-3d-nav-container -->
+      <li>
+        <a href="#0" data-menu="projects">
+          <img src="img/song.svg">
+          <p>Songs</p>
+        </a>
+      </li>
+    </ul>
+  </nav> <!-- .cd-side-navigation -->
 
     <div class="container">
       <div ng-view=""></div>
@@ -55,8 +62,8 @@
 
     <!-- 
     <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-cookies/angular-cookies.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
