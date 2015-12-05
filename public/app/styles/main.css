@@ -138,8 +138,9 @@ li a p {
 /* --------------------------
     Search Bar
 -------------------------- */
-body {
-  padding: 40px 0px;
+.search {
+  display: inline-block;
+  width: 50vw;
 }
 #search {
   position: fixed;
