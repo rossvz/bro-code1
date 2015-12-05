@@ -1,116 +1,86 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Bro Code</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,300italic,700,700italic' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="styles/main.css">
-  </head>
-  <body ng-app="brocodiusApp">
+<head>
+  <meta charset="utf-8">
+  <title>Bro Code</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,300italic,700,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Gentium+Basic:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body ng-app="brocodiusApp">
 
-    <header class="cd-header">
-      <a href="#0" class="cd-logo">{ Bro<b>Code</b> } </a>
-      <a href="#0" class="cd-3d-nav-trigger">
-        Menu
-        <span></span>
+<header class="cd-header">
+  <div class="callout">
+    <div class="valign">
+      <h1>Welcome to BroCode</h1>
+      <p>Live performance, real structure.</p>
+
+      <a href="#">
+        <div class="btn join">Join</div>
       </a>
-    </header> <!-- .cd-header -->
-    
-    <main>
-      <div class="container">
-        <div class="input-group search-bar">
-          <input type="text" class="form-control" placeholder="You Make Me Brave">
-          <span class="input-group-btn">
-            <button class="btn btn-default" type="button">Search</button>
-          </span>
-        </div><!-- /input-group -->
-        <ul class="cd-accordion-menu animated">
-          <li class="has-children">
-            <input type="checkbox" name ="group-1" id="group-1">
-            <label for="group-1">Setlist 1</label>
-
-            <ul>
-              <li><a href="#0">Image</a></li>
-              <li><a href="#0">Image</a></li>
-            </ul>
-          </li>
-
-          <li class="has-children">
-            <input type="checkbox" name ="group-2" id="group-2">
-            <label for="group-2">Setlist 2</label>
-
-            <ul>
-              <li><a href="#0">Image</a></li>
-              <li><a href="#0">Image</a></li>
-            </ul>
-          </li>
-
-          <li class="has-children">
-            <input type="checkbox" name ="group-3" id="group-3">
-            <label for="group-3">Setlist 3</label>
-
-            <ul>
-              <li><a href="#0">Image</a></li>
-              <li><a href="#0">Image</a></li>
-            </ul>
-          </li>
-
-          <li class="has-children">
-            <input type="checkbox" name ="group-4" id="group-4">
-            <label for="group-4">Setlist 4</label>
-
-            <ul>
-              <li><a href="#0">Image</a></li>
-              <li><a href="#0">Image</a></li>
-            </ul>
-          </li>
-        </ul> <!-- cd-accordion-menu -->
-      </div>
-    </main>
-    
-    <nav class="cd-3d-nav-container">
-      <ul class="cd-3d-nav">
-        <li class="cd-selected">
-          <a href="#0">Library</a>
-        </li>
-
-        <li>
-          <a href="#0">New Setlist</a>
-        </li>
-
-        <li>
-          <a href="#0">New Song</a>
-        </li>
-      </ul> <!-- .cd-3d-nav -->
-
-      <span class="cd-marker color-1"></span> 
-    </nav> <!-- .cd-3d-nav-container -->
-
-    <div class="container">
-      <div ng-view=""></div>
+      <a href="#">
+        <div class="btn login">Login</div>
+      </a>
     </div>
+  </div>
+</header> <!-- .cd-header -->
 
-    <!-- 
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/angular-animate/angular-animate.js"></script>
-    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
-    <script src="bower_components/angular-resource/angular-resource.js"></script>
-    <script src="bower_components/angular-route/angular-route.js"></script>
-    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-    <script src="bower_components/angular-touch/angular-touch.js"></script>
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/about.js"></script>
-        endbuild -->
 
-    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-    <script src="scripts/nav.js"></script>
+<nav class="cd-side-navigation">
+  <ul>
+    <li>
+      <a href="#0" data-menu="index">
+        <img src="img/library.svg">
+
+        <p>Library</p>
+      </a>
+    </li>
+
+    <li>
+      <a href="#0" data-menu="services">
+        <img src="img/setlist.svg">
+
+        <p>Setlists</p>
+      </a>
+    </li>
+
+    <li>
+      <a href="#0" data-menu="projects">
+        <img src="img/song.svg">
+
+        <p>Songs</p>
+      </a>
+    </li>
+  </ul>
+</nav> <!-- .cd-side-navigation -->
+
+<div class="container">
+  <div ng-view=""></div>
+</div>
+
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="bower_components/angular-touch/angular-touch.js"></script>
+<script src="scripts/app.js"></script>
+<script src="scripts/controllers/main.js"></script>
+<script src="scripts/controllers/about.js"></script>
+<script src="scripts/controllers/setlist.js"></script>
+<script src="scripts/controllers/login.js"></script>
+<script src="scripts/controllers/song.js"></script>
+<script src="scripts/controllers/library.js"></script>
+
+
+<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="scripts/nav.js"></script>
 </body>
 </html>
